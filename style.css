@@ -1,0 +1,94 @@
+body {
+  padding: 10px 0;
+}
+.card {
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0.1, 0.3);
+}
+
+.container {
+  max-width: 800px;
+  display: block;
+  border-radius: 10px;
+}
+input {
+  border-radius: 100px;
+  border-color: red;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  width: 459px;
+  max-width: 100%;
+  font-weight: 39px;
+}
+.button {
+  border-radius: 100px;
+  border-color: #668ba4;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  width: 135px;
+}
+
+h1 {
+  text-align: left;
+  line-height: 48px;
+  font-size: 40px;
+  margin: 0 auto;
+  font-weight: bold;
+  color: rgb(56, 55, 55);
+  margin-bottom: 10px;
+}
+h1::first-letter {
+  text-transform: uppercase;
+}
+
+p {
+  padding: -10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: rgb(56, 55, 55);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.material-symbols-outlined {
+  font-size: 50px;
+}
+
+.temperature {
+  display: block;
+  padding: -10px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  color: rgb(56, 55, 55);
+}
+.cloudy {
+  font-size: 20px;
+  color: rgb(56, 55, 55);
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+.degree {
+  font-size: 35px;
+  color: rgb(56, 55, 55);
+  margin-bottom: 10px;
+}
+.units a {
+  color: rgb(56, 55, 55);
+  text-decoration: none;
+  font-size: 35px;
+}
+.phenomena {
+  display: block;
+  color: rgb(56, 55, 55);
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.weather {
+  display: block;
+  text-align: left;
+  color: rgb(56, 55, 55);
+  font-size: 16px;
+}

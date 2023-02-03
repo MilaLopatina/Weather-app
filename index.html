@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather api</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&family=Sevillana&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="SearchForm">
+            <input
+              type="text"
+              placeholder=" Search city "
+              id="CityInput"
+              utocomplete="off"
+              rows="3"
+            />
+            <input type="submit" value="Search" class="button" />
+            <input
+              type="submit"
+              value="Current"
+              class="button"
+              id="currentLocation"
+            />
+          </form>
+
+          <h1 id="city">Kyiv</h1>
+
+          <p id="day"></p>
+
+          <div class="temperature">
+            <div class="row">
+              <div class="col-1 partly">
+                <span class="material-symbols-outlined">
+                  partly_cloudy_day
+                </span>
+              </div>
+              <div class="col-4 degree">
+                <span class="degree" id="degree">14</span>
+                <span class="units"
+                  ><a href="#" id="celsius">℃</a> |
+                  <a href="#" id="fahrenheit">°F</a></span
+                >
+              </div>
+              <div class="col-6 cloudy" id="cloudy">
+                Cloudy | Feels like 10℃
+              </div>
+            </div>
+          </div>
+
+          <div class="phenomena">
+            <div class="row">
+              <div class="col-4 humidity">
+                <strong>HUMIDITY</strong>
+                <div class="row">
+                  <div class="col-12 percent">67%</div>
+                </div>
+              </div>
+
+              <div class="col-4 visibility">
+                <strong>VISIBILITY</strong>
+                <div class="row">
+                  <div class="col-12">2 km</div>
+                </div>
+              </div>
+
+              <div class="col-4 wind">
+                <strong>WIND</strong>
+                <div class="row">
+                  <div class="col-12">1 km/h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="weather">
+            <div class="row">
+              <div class="col-2">
+                <strong>Mon</strong>
+                <div class="row">
+                  <div class="col-12">⛅ <strong>17°</strong> 14°</div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <strong>Tue</strong>
+                <div class="row">
+                  <div class="col-12">⛅<strong>15°</strong> 10°</div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <strong>Wed</strong>
+                <div class="row">
+                  <div class="col-12">☁ <strong>15°</strong> 11°</div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <strong>Thu</strong>
+                <div class="row">
+                  <div class="col-12">🌧 <strong>14°</strong> 9°</div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <strong>Fri</strong>
+                <div class="row">
+                  <div class="col-12">☁ <strong>14°</strong> 10°</div>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <strong>Sat</strong>
+                <div class="row">
+                  <div class="col-12">☁ <strong>15°</strong> 12°</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
