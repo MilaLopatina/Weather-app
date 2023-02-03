@@ -92,3 +92,15 @@ p {
   color: rgb(56, 55, 55);
   font-size: 16px;
 }
+
+a {
+  color: #668ba4;
+  text-decoration: none;
+}
+
+.creator {
+  text-align: center;
+  font-size: 10px;
+  margin: 5px 0 10px;
+  padding: 5px;
+}
