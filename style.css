@@ -73,11 +73,15 @@ p {
   font-size: 35px;
   color: rgb(56, 55, 55);
   margin-bottom: 10px;
+  font-weight: bold;
 }
 .units a {
   color: rgb(56, 55, 55);
   text-decoration: none;
-  font-size: 35px;
+  font-size: 20px;
+  position: relative;
+  top: -14px;
+  font-weight: 590;
 }
 .phenomena {
   display: block;
