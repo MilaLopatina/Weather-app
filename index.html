@@ -52,21 +52,22 @@
 
           <div class="temperature">
             <div class="row">
-              <div class="col-1 partly">
-                <span class="material-symbols-outlined">
-                  partly_cloudy_day
-                </span>
+              <div class="col-3 partly">
+                <img
+                  src=""
+                  alt="Sun"
+                  class="material-symbols-outlined"
+                  id="icon"
+                />
               </div>
-              <div class="col-4 degree">
+              <div class="col-3 degree">
                 <span class="degree" id="degree"></span>
-                <span class="units"
+                <span class="units" id="units"
                   ><a href="#" id="celsius" class="active">℃ |</a>
                   <a href="#" id="fahrenheit">°F</a></span
                 >
               </div>
-              <div class="col-6 cloudy" id="cloudy">
-                Cloudy | Feels like 10℃
-              </div>
+              <div class="col-3 cloudy" id="cloudy">Cloudy</div>
             </div>
           </div>
 
@@ -75,21 +76,21 @@
               <div class="col-4 humidity">
                 <strong>HUMIDITY</strong>
                 <div class="row">
-                  <div class="col-12 percent">67%</div>
+                  <div class="col-12 percent" id="humidity"></div>
                 </div>
               </div>
 
               <div class="col-4 visibility">
                 <strong>VISIBILITY</strong>
                 <div class="row">
-                  <div class="col-12">2 km</div>
+                  <div class="col-12" id="visibility">km</div>
                 </div>
               </div>
 
               <div class="col-4 wind">
                 <strong>WIND</strong>
                 <div class="row">
-                  <div class="col-12">1 km/h</div>
+                  <div class="col-12" id="wind">km/h</div>
                 </div>
               </div>
             </div>

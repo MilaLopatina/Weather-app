@@ -37,11 +37,24 @@ function current(response) {
   let h1 = document.querySelector("h1");
   let temperatureElement = document.querySelector("#degree");
   let description = document.querySelector("#cloudy");
+  let humidityElement = document.querySelector("#humidity");
+  let visibilityElement = document.querySelector("#visibility");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   description.innerHTML = response.data.weather[0].main;
   h1.innerHTML = response.data.name;
+  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  visibilityElement.innerHTML = `${response.data.visibility} km`;
+  windElement.innerHTML = `${response.data.wind.speed} km/h`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function showCurrent(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;

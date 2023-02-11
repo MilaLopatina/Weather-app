@@ -52,36 +52,41 @@ p {
   font-weight: bold;
 }
 
-.material-symbols-outlined {
-  font-size: 50px;
-}
-
 .temperature {
-  display: block;
   padding: -10px;
-  margin-bottom: 10px;
+
   font-size: 10px;
   color: rgb(56, 55, 55);
 }
-.cloudy {
-  font-size: 20px;
+
+.material-symbols-outlined {
+  padding: 0;
+  position: relative;
   color: rgb(56, 55, 55);
-  margin-bottom: 10px;
+  margin-left: -20px;
+  top: -20px;
+}
+.cloudy {
+  display: block;
+  padding: -10px;
+  font-size: 35px;
+  color: rgb(56, 55, 55);
   font-weight: bolder;
 }
+
 .degree {
   font-size: 35px;
   color: rgb(56, 55, 55);
-  margin-bottom: 10px;
   font-weight: bold;
+  margin-left: -50px;
 }
 .units a {
   color: rgb(56, 55, 55);
   text-decoration: none;
   font-size: 20px;
   position: relative;
-  top: -14px;
-  font-weight: 590;
+  top: -10px;
+  font-weight: 540px;
 }
 .phenomena {
   display: block;
