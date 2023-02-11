@@ -28,8 +28,6 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(current);
 }
-let form = document.querySelector("#SearchForm");
-form.addEventListener("submit", search);
 
 let description = document.querySelector("#cloudy");
 let temperatureElement = document.querySelector("#degree");
@@ -37,10 +35,10 @@ let temperatureElement = document.querySelector("#degree");
 console.log(description);
 function current(response) {
   let h1 = document.querySelector("h1");
-  let temperature = Math.round(response.data.main.temp);
-  let description = document.querySelector("#cloudy");
   let temperatureElement = document.querySelector("#degree");
-  temperatureElement.innerHTML = `${temperature}`;
+  let description = document.querySelector("#cloudy");
+  celsiusTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   description.innerHTML = response.data.weather[0].main;
   h1.innerHTML = response.data.name;
 }
@@ -61,4 +59,32 @@ function searchCity(city) {
 }
 let currentButton = document.querySelector("#currentLocation");
 currentButton.addEventListener("click", getCurrentPosition);
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#degree");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#degree");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+let form = document.querySelector("#SearchForm");
+form.addEventListener("submit", search);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
 searchCity("Kyiv");
