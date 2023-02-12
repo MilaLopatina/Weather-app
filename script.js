@@ -1,24 +1,26 @@
-let dayIn = document.querySelector("#day");
-let currenTime = new Date();
-let hours = currenTime.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(response) {
+  let date = new Date();
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thuesday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-let minutes = currenTime.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let dayInput = currenTime.getDay();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thuesday",
-  "Friday",
-  "Saturday",
-];
-dayIn.innerHTML = `${days[dayInput]} ${hours}:${minutes}`;
 
 function search(event) {
   event.preventDefault();
@@ -35,12 +37,18 @@ let temperatureElement = document.querySelector("#degree");
 console.log(description);
 function current(response) {
   let h1 = document.querySelector("h1");
+  let dayElement = document.querySelector("#day");
+  let searchInput = document.querySelector("#CityInput");
+  let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#degree");
   let description = document.querySelector("#cloudy");
   let humidityElement = document.querySelector("#humidity");
   let visibilityElement = document.querySelector("#visibility");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+
+  dayElement.innerHTML = formatDate(response.data.dt * 1000);
+  cityElement.innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   description.innerHTML = response.data.weather[0].main;
@@ -60,6 +68,7 @@ function showCurrent(position) {
   let lon = position.coords.longitude;
   let apiKey = "b13a1f89322c24461d168850e0f615cb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(current);
 }
 function getCurrentPosition() {
