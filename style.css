@@ -2,7 +2,12 @@ body {
   padding: 10px 0;
 }
 .card {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(
+    179.1deg,
+    rgb(247, 238, 238) -1.9%,
+    rgb(247, 202, 201) 44.9%,
+    rgb(145, 168, 208) 96.1%
+  );
   box-shadow: 5px 5px 5px rgba(0, 0, 0.1, 0.3);
 }
 
@@ -34,7 +39,7 @@ h1 {
   text-align: left;
   line-height: 48px;
   font-size: 40px;
-  margin: 0 auto;
+  margin: 10px 0 10px 0;
   font-weight: bold;
   color: rgb(56, 55, 55);
   margin-bottom: 10px;
@@ -91,8 +96,8 @@ p {
 .phenomena {
   display: block;
   color: rgb(56, 55, 55);
-  margin-bottom: 15px;
-  font-size: 15px;
+  margin-bottom: 20px;
+  font-size: 17px;
 }
 
 .weather {
@@ -112,4 +117,19 @@ a {
   margin: 5px 0 10px;
   padding: 5px;
   text-decoration: none;
+}
+
+.weather-forecast-date {
+  color: rgb(56, 55, 55);
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bolder;
+}
+.weather-forecast-temperature-min {
+  font-weight: bolder;
+  opacity: 0.7;
 }
